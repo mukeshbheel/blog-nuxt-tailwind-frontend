@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
+/* font-family: 'Zen Antique Soft', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+/* font-family: 'Dancing Script', cursive; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.carousel__next {
+    background-color: aliceblue;
+}
