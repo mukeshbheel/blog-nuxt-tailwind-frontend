@@ -5,20 +5,20 @@
     <div class="main basis-3/4" v-if="allPostsData">
       <div class="flex flex-row justify-center" v-for="item in allPostsData" :key="item._id">
         <div class="allPosts my-9">
-          <div class="date text-center text-slate-400 text-lg">
-            {{item.date}}
+          <div class="date text-center text-slate-400 text-sm">
+            {{store.getBlogDate(new Date(item.date))}}
           </div>
-          <div class="title text-center">{{  item.title }}</div>
+          <div class="title text-center text-xl my-4 capitalize">{{  item.title }}</div>
           <div
             class="
               tags
               flex flex-row
               justify-center
-              my-9
-              text-slate-400 text-lg
+              mb-9
+              text-slate-400
             "
           >
-            <div class="tag mx-2" v-for="tag in item.tags" :key="tag">#{{ tag }}</div>
+            <div class="tag mx-2 text-sm" v-for="tag in item.tags" :key="tag">#{{ tag }}</div>
           </div>
           <div class="mainImage justify-center">
             <img
@@ -28,7 +28,7 @@
               srcset=""
             />
           </div>
-          <div class="description my-9 text-slate-500 leading-9">
+          <div class="description my-9 mx-6 text-slate-500 leading-9">
             {{  item.description }}
           </div>
           <div class="readMore flex flex-row justify-center">
@@ -60,13 +60,13 @@
           alt=""
           class="rounded-full"
         />
-        <h2 class="bold">Subscribe</h2>
+        <h2 class="subscribe">Subscribe</h2>
         <p class="text-slate-500 uppercase">To my youtube channel</p>
       </div>
     </a>
       
       <div class="aboutMe">
-        <h2 class="text-3xl mt-4">I'm Mukesh Bheel</h2>
+        <h2 class="text-xl mt-4">I'm Mukesh Bheel</h2>
         <p class="text-slate-400 my-4 leading-9">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel
           tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel
@@ -88,7 +88,7 @@
           <div
             class="date text-slate-400 text-sm tracking-wider uppercase mt-3"
           >
-            {{ item.date }}
+            {{ store.getBlogDate(new Date(item.date)) }}
           </div>
           <div class="Sidebartitle text-xl my-2">
             {{ item.title }}
@@ -214,6 +214,7 @@ export default {
         sidebarPosts,
         allPostsData,
         sidebarPostsData,
+        store,
     }
   },
 };
@@ -222,8 +223,8 @@ export default {
 
 <style scoped>
 .title {
-  font-size: 2rem;
   font-weight: 400;
+  word-spacing: 1.5px;
 }
 
 .main {
@@ -244,8 +245,8 @@ export default {
 }
 
 .profile h2 {
-  font-size: 3rem;
-  font-family: "Dancing Script", cursive;
+  font-size: 5rem;
+  font-family: 'Qwitcher Grypen', cursive;
 }
 
 .sidebartitle {

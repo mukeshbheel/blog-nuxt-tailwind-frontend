@@ -1,8 +1,8 @@
 <template>
   <div class="mb-7">
-    <div class="topBar flex flex-row uppercase mx-7 py-5 text-slate-400 tracking-wide">
-      <p class="basis-1/4">Hello World, My name is Mukesh</p>
-      <p class="basis-1/4">mukeshbheel001@gmail.com</p>
+    <div class="topBar flex flex-row uppercase mx-7 pt-5 text-gray-400 tracking-wide">
+      <p class="basis-1/4 text-xs pt-1">Hello World, My name is Mukesh</p>
+      <p class="basis-1/4 text-xs pt-1">mukeshbheel001@gmail.com</p>
       <ul class="basis-1/4 flex flex-row justify-center">
         <li class="basis-1/6"><a href="https://www.instagram.com/?hl=en" target="_blank"><img class="w-5" src="../assets/icons/instagram.png" alt="" srcset=""></a></li>
         <li class="basis-1/6"><a href="https://www.facebook.com/" target="_blank"><img class="w-5" src="../assets/icons/facebook.png" alt="" srcset=""></a></li>
@@ -14,11 +14,11 @@
         <button type="submit">Search</button>
       </div>
     </div>
-    <div class="mainHead">
-        <div class="logo mx-auto text-center"><span><NuxtLink to="/">Mukesh</NuxtLink></span></div>
-        <div class="subtitle text-center uppercase text-slate-400 tracking-widest">personal blog</div>
+    <div class="mainHead mb-14">
+        <div class="logo mx-auto text-center"><NuxtLink to="/">Mukesh</NuxtLink></div>
+        <div class="subtitle text-center uppercase text-slate-400 text-xs">personal blog</div>
         <div class="navbar flex flex-row justify-center">
-            <ul class="flex flex-row uppercase basis-3/5">
+            <ul class="flex flex-row uppercase basis-2/5 text-sm">
                 <li class="category basis-1/4 text-center"><NuxtLink to="/">Home</NuxtLink></li>
                 <li class="category basis-1/4 text-center">featured</li>
                 <li class="category basis-1/4 text-center">about me</li>
@@ -47,19 +47,23 @@ export default {
     word-spacing: 0.1rem;
 }
 .logo {
-    font-size: 100px;
-    font-family: 'Dancing Script', cursive;
+    font-size: 180px;
+    font-family: 'Qwitcher Grypen', cursive;
     color: #2f2f2f;
     text-decoration: none;
     font-weight: 500;
+    margin-top: -42px;
+    margin-bottom: -32px;
 }
 
 .subtitle {
     margin-left: 25rem;
     margin-bottom: 2rem;
+    letter-spacing: 0.5em;
+    word-spacing: 0.7em;
 }
 
 .category {
-    font-weight: 500;
+    font-weight: 400;
 }
 </style>

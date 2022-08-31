@@ -1,6 +1,13 @@
 import axios from "axios";
 var currentBlog = 'null';
 const baseUrl = 'https://sheltered-hamlet-11059.herokuapp.com'
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+function getBlogDate(blogDate){
+    const d = new Date(blogDate)
+    const date = months[d.getMonth()]+' '+ d.getDate() + ', ' + d.getYear()+'';
+    return date; 
+}
 
 async function setCurrentBlog(id){
     console.log(id)
@@ -70,4 +77,5 @@ async function updatePost(blog, blogId){
     getAllPosts,
     deletePost,
     updatePost,
+    getBlogDate,
 }
