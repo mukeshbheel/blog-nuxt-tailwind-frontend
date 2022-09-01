@@ -66,7 +66,7 @@
     </a>
       
       <div class="aboutMe">
-        <h2 class="text-xl mt-4">I'm Mukesh Bheel</h2>
+        <h2 class="text-xl mt-4">I'm Your Name</h2>
         <p class="text-slate-400 my-4 leading-9">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel
           tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel
