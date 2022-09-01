@@ -5,10 +5,10 @@
     <div class="main basis-3/4">
       <div class="flex flex-row justify-center" v-if="item">
         <div class="allPosts my-9">
-          <div class="date text-center text-slate-400 text-lg">
-            {{item[0].date}}
+          <div class="date text-center text-slate-400 text-sm">
+            {{store.getBlogDate(new Date(item[0].date))}}
           </div>
-          <div class="title text-center">{{  item[0].title }}</div>
+          <div class="title text-center text-xl my-4 capitalize">{{  item[0].title }}</div>
           <div
             class="
               tags
@@ -18,7 +18,7 @@
               text-slate-400 text-lg
             "
           >
-            <div class="tag mx-2" v-for="tag in item[0].tags" :key="tag">#{{ tag }}</div>
+            <div class="tag mx-2 text-sm" v-for="tag in item[0].tags" :key="tag">#{{ tag }}</div>
           </div>
           <div class="mainImage justify-center">
             <img
@@ -52,6 +52,7 @@ export default{
     data(){
       return {
         item: null,
+        store: store,
       }
     },
     async mounted(){

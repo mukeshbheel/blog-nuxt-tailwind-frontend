@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-wrap">
+    <div class="sm:flex flex-wrap">
         <div class="card basis-1/4 flex-1 mx-3 mb-9 max-w-xs" v-for="post,i in allPosts" :key="post._id">
             <img :src="post.image" alt="">
             <p class="title my-3 text-slate-900">{{post.title}}</p>

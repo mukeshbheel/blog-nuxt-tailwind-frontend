@@ -1,11 +1,11 @@
 <template>
 <div>
     <div class=" main flex flex-row mx-7" v-if="footerPostsData">
-        <div class="flex flex-row basis-1/4" v-for="item in footerPostsData" :key="item._id">
+        <div class="sm:item sm:flex itemMobile overflow-clip flex-row basis-1/4" v-for="item in footerPostsData" :key="item._id">
         <div class="image">
             <img :src="item.image" alt="">
         </div>
-        <div class="mx-2">
+        <div class="mx-2 sm:block hidden" >
             <p class="date tag text-slate-500 text-sm my-3">{{ store.getBlogDate(new Date(item.date)) }}</p>
             <h2 class="title">{{item.title}}</h2>
             <div class="tags my-3">
@@ -132,5 +132,12 @@ export default{
     right: 5%;
     z-index: 3;
     display: none;
+}
+.item {
+  overflow: auto;
+  height: 264px;
+}
+.itemMobile {
+  height: 170px;
 }
 </style>

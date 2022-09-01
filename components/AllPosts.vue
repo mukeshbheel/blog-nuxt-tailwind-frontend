@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-row justify-center my-9 mx-7">
+  <div class="sm:flex flex-row justify-center my-9 mx-7">
 
     <!-- .............................main posts.......................... -->
-    <div class="main basis-3/4" v-if="allPostsData">
-      <div class="flex flex-row justify-center" v-for="item in allPostsData" :key="item._id">
+    <div class="sm:main sm:basis-3/4" v-if="allPostsData">
+      <div class="sm:flex flex-row justify-center" v-for="item in pageBlogs" :key="item._id">
         <div class="allPosts my-9">
           <div class="date text-center text-slate-400 text-sm">
             {{store.getBlogDate(new Date(item.date))}}
@@ -22,7 +22,7 @@
           </div>
           <div class="mainImage justify-center">
             <img
-              class="mx-auto"
+              class="mx-auto px-7"
               :src="item.image"
               alt=""
               srcset=""
@@ -36,25 +36,15 @@
           </div>
         </div>
       </div>
-      <div class="pagination">
-        <button class="bg-gray-800 text-white px-5 py-2 mx-1">1</button>
-        <button
-          class="bg-gray-100 px-5 py-2 mx-1 hover:text-white hover:bg-gray-800"
-        >
-          2
-        </button>
-        <button
-          class="bg-gray-100 px-5 py-2 mx-1 hover:text-white hover:bg-gray-800"
-        >
-          3
-        </button>
+      <div class="pagination" v-if="allPostsData && allPostsData.length > 0">
+        <button :class="blogPage == i?'bg-gray-800 text-white px-5 py-2':'bg-gray-100 px-5 py-2 mx-1 hover:text-white hover:bg-gray-800'" v-for="i in allPostsData.length%3==0?allPostsData.length/3:Math.ceil(allPostsData.length/3)" :key="i" @click="blogPage = i">{{ i }}</button>
       </div>
     </div>
 
     <!-- ..................sidebar............................ -->
-    <div class="sidebar basis-1/4 flex-column justify-center">
+    <div class="sidebar sm:basis-1/4 flex-column justify-center">
     <a href="https://www.youtube.com/" target="_blank">
-      <div class="profile my-9">
+      <div class="profile my-9 sm:block hidden">
         <img
           src="https://images.unsplash.com/photo-1561152820-340780bc049e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
           alt=""
@@ -105,13 +95,14 @@
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import store from '~/store'
 export default {
   setup() {
     const router = useRouter();
     const allPostsData = ref(null);
     const sidebarPostsData = ref(null)
+    const blogPage = ref(1)
     const data = ref([
       {
         _id: "63060ff74af2f2d4fbf32815",
@@ -196,6 +187,31 @@ export default {
     ])
 
     
+    watch(blogPage,(newPage, oldPage)=>{
+      if(newPage != oldPage){
+        console.log('new page')
+        window.scrollTo({top:1000, behavior: 'smooth'})
+      }
+      
+    })
+
+    const pageBlogs=computed(()=>{
+      if(allPostsData.value && allPostsData.value.length<5){
+        console.log('in if')
+        return allPostsData.value
+      }else{
+        var i = 3*(blogPage.value - 1);
+        var index = i;
+        const arr = [];
+        while(allPostsData.value[index] && index < (i+3)){
+          arr.push(allPostsData.value[index])
+          index++;
+        }
+        console.log(arr)
+        console.log('in else')
+        return arr
+      }
+    })
     onMounted(async()=>{
       console.log(allPostsData.value)
       allPostsData.value = await store.setPosts('general');
@@ -215,6 +231,8 @@ export default {
         allPostsData,
         sidebarPostsData,
         store,
+        blogPage,
+        pageBlogs,
     }
   },
 };
