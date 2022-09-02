@@ -4,9 +4,9 @@
       <p class="sm:block hidden basis-1/4 text-xs pt-1">Hello World, My name is Your Name</p>
       <p class="sm:block hidden basis-1/4 text-xs pt-1">YourEmail@gmail.com</p>
       <ul class="basis-1/4 flex flex-row justify-center">
-        <li class="basis-1/6"><a href="https://www.instagram.com/?hl=en" target="_blank"><img class="w-5" :src="getIcon('instagram')" alt="" srcset=""></a></li>
-        <li class="basis-1/6"><a href="https://www.facebook.com/" target="_blank"><img class="w-5" :src="getIcon('facebook')" alt="" srcset=""></a></li>
-        <li class="basis-1/6"><a href="https://twitter.com/" target="_blank"><img class="w-5" :src="getIcon('twitter')" alt="" srcset=""></a></li>
+        <li class="basis-1/6"><a href="https://www.instagram.com/?hl=en" target="_blank"><img class="w-5" src="../assets/icons/instagram.png" alt="" srcset=""></a></li>
+        <li class="basis-1/6"><a href="https://www.facebook.com/" target="_blank"><img class="w-5" src="../assets/icons/facebook.png" alt="" srcset=""></a></li>
+        <li class="basis-1/6"><a href="https://twitter.com/" target="_blank"><img class="w-5" src="../assets/icons/twitter.png" alt="" srcset=""></a></li>
         <li class="basis-1/6 text-xs"><nuxt-link href="/AdminPanel/Dashboard">Admin Panel</nuxt-link></li>
       </ul>
       <div class="search basis-1/4">
