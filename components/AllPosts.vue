@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="pagination" v-if="allPostsData && allPostsData.length > 0">
-        <button :class="blogPage == i?'bg-gray-800 text-white px-5 py-2':'bg-gray-100 px-5 py-2 mx-1 hover:text-white hover:bg-gray-800'" v-for="i in allPostsData.length%3==0?allPostsData.length/3:Math.ceil(allPostsData.length/3)" :key="i" @click="blogPage = i">{{ i }}</button>
+        <button :class="blogPage == i?'bg-gray-800 text-white px-5 py-2':'bg-gray-100 px-5 py-2 mx-1 hover:text-white hover:bg-gray-800'" v-for="i in allPostsData.length%3==0?allPostsData.length/3:Math.ceil(allPostsData.length/3)" :key="i" @click="blogPage=i; $router.push(`/?page=${i}`)">{{i}}</button>
       </div>
     </div>
 
@@ -100,6 +100,7 @@ import store from '~/store'
 export default {
   setup() {
     const router = useRouter();
+    const route = useRoute();
     const allPostsData = ref(null);
     const sidebarPostsData = ref(null)
     const blogPage = ref(1)
@@ -219,6 +220,9 @@ export default {
 
       sidebarPostsData.value = await store.setPosts('sidebarPost')
       console.log(sidebarPostsData.value)
+      if(route.query.page){
+        blogPage.value = route.query.page;
+      }
       // console.log(store.getAllPosts())
 
       // await store.setPosts('sidebarPosts');
