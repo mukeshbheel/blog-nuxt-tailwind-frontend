@@ -196,6 +196,12 @@ export default {
       
     })
 
+    watch(route,async(newRoute, oldRoute)=>{
+      if(newRoute.path == '/featured'){
+        allPostsData.value = await store.setPosts('featured')
+      }
+    })
+
     const pageBlogs=computed(()=>{
       if(allPostsData.value && allPostsData.value.length<5){
         console.log('in if')
@@ -215,7 +221,12 @@ export default {
     })
     onMounted(async()=>{
       console.log(allPostsData.value)
-      allPostsData.value = await store.setPosts('general');
+      if(route.path == '/Featured'){
+        allPostsData.value = await store.setPosts('featured')
+      }else {
+        allPostsData.value = await store.setPosts('general');
+      }
+      
       console.log(allPostsData.value)
 
       sidebarPostsData.value = await store.setPosts('sidebarPost')

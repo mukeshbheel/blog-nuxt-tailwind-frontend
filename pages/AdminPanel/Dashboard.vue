@@ -9,7 +9,7 @@
             </div>
             <div class="flex">
                 <button class="update border-2 px-2 py-1 my-2 mr-1 text-sm bg-slate-600 text-gray-200" @click="$emit('updatePost', post)">Update</button>
-                <button class="delete border-2 px-2 py-1 my-2 mr-1 text-sm bg-red-800 text-gray-200" @click="deletePost(post._id, i)">Delete</button>
+                <button class="delete border-2 px-2 py-1 my-2 mr-1 text-sm bg-red-800 text-gray-200" @click="deletePost(post._id, i)" v-if="post.category != 'footerPost'">Delete</button>
                 <!-- <button class="delete border-2">Delete</button> -->
             </div>
 

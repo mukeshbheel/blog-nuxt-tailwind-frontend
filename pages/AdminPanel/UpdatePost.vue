@@ -82,6 +82,7 @@
     <label for="category">Category:</label>
   <select name="category" id="category" v-model="category" >
     <option value="general">general</option>
+    <option value="featured">featured</option>
     <option value="sidebarPost">sidebarPost</option>
     <option value="footerPost">footerPost</option>
   </select>

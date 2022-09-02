@@ -82,6 +82,7 @@
     <label for="category">Category:</label>
   <select name="category" id="category" v-model="category" >
     <option value="general">general</option>
+    <option value="featured">featured</option>
     <option value="sidebarPost">sidebarPost</option>
     <option value="footerPost">footerPost</option>
   </select>
@@ -203,7 +204,7 @@ import store from '../../store.js'
 export default {
     setup() {
         const title= ref('')
-        const category = ref('')
+        const category = ref(null)
         const image = ref('')
         const description = ref('')
         const tag = ref('')
@@ -225,7 +226,7 @@ export default {
         }
 
         const addPost = () => {
-            if(title != '' && category != '' && image != '' && description != '' && tags.value.length > 0){
+            if(title != '' && category != null && image != '' && description != '' && tags.value.length > 0){
                 const blog = {
         "image": image.value,
         "title": title.value,
@@ -235,6 +236,8 @@ export default {
       }
                 store.addPost(blog)
                 router.push('/AdminPanel/Dashboard')
+            }else{
+              alert('fill all fields')
             }
         }
 

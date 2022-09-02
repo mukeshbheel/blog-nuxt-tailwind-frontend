@@ -8,6 +8,7 @@
             <ul>
                 <li class="my-3 text-xs ml-3 " :class="$route.path == '/AdminPanel/Dashboard' && category == null? 'text-blue-500 border-b-2':''"><button @click="showCategory(null)" >All</button></li>
                 <li class="my-3 text-xs ml-3" :class="$route.path == '/AdminPanel/Dashboard' && category == 'general'? 'text-blue-500 border-b-2':''"><button @click="showCategory('general')" >General</button></li>
+                <li class="my-3 text-xs ml-3" :class="$route.path == '/AdminPanel/Dashboard' && category == 'featured'? 'text-blue-500 border-b-2':''"><button @click="showCategory('featured')" >Featured</button></li>
                 <li class="my-3 text-xs ml-3" :class="$route.path == '/AdminPanel/Dashboard' && category == 'sidebarPost'? 'text-blue-500 border-b-2':''"><button @click="showCategory('sidebarPost')" >Sidebar Posts</button></li>
                 <li class="my-3 text-xs ml-3" :class="$route.path == '/AdminPanel/Dashboard' && category == 'footerPost'? 'text-blue-500 border-b-2':''"><button @click="showCategory('footerPost')">Footer Posts</button></li>
             </ul>

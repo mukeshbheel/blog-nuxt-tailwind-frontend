@@ -19,10 +19,10 @@
         <div class="subtitle text-center uppercase text-slate-400 text-xs ml-7">personal blog</div>
         <div class="navbar flex flex-row justify-center">
             <ul class="sm:flex flex-row uppercase sm:basis-2/5 text-sm">
-                <li class="category basis-1/4 text-center"><NuxtLink to="/">Home</NuxtLink></li>
-                <li class="category basis-1/4 text-center">featured</li>
-                <li class="category basis-1/4 text-center">about me</li>
-                <li class="category basis-1/4 text-center">contact</li>
+                <li class="category basis-1/4 text-center cursor-pointer"><NuxtLink to="/">Home</NuxtLink></li>
+                <li class="category basis-1/4 text-center cursor-pointer" @click="$router.push('/Featured')">featured</li>
+                <li class="category basis-1/4 text-center cursor-pointer" @click="$router.push('/about')">about me</li>
+                <li class="category basis-1/4 text-center cursor-pointer">contact</li>
             </ul>
         </div>
     </div>
