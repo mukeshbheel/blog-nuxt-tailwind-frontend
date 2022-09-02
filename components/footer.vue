@@ -8,10 +8,10 @@
         <div class="mx-2 sm:block hidden" >
             <p class="date tag text-slate-500 text-sm my-3">{{ store.getBlogDate(new Date(item.date)) }}</p>
             <h2 class="title">{{item.title}}</h2>
-            <div class="tags my-3">
+            <!-- <div class="tags my-3">
                 <p class="tag text-slate-500 text-sm" v-for="tag in item.tags" :key="tag">#{{tag}}</p>
-            </div>
-            <div class="link underline decoration-1" @click="$router.push(`/BlogDetails/${item._id}`)">
+            </div> -->
+            <div class="link underline decoration-1 cursor-pointer" @click="$router.push(`/BlogDetails/${item._id}`)">
                 Read More
                 </div>
         </div>
