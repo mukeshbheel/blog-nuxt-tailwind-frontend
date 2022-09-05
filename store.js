@@ -4,8 +4,9 @@ const baseUrl = 'https://sheltered-hamlet-11059.herokuapp.com'
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 function getBlogDate(blogDate){
-    const d = new Date(blogDate)
-    const date = months[d.getMonth()]+' '+ d.getDate() + ', ' + d.getYear()+'';
+    // const d = new Date(blogDate)
+    console.log(blogDate)
+    const date = months[blogDate.month]+' '+ blogDate.day + ', ' + blogDate.year+'';
     return date; 
 }
 

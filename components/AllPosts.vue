@@ -5,8 +5,8 @@
     <div class="sm:main sm:basis-3/4" v-if="allPostsData">
       <div class="sm:flex flex-row justify-center" v-for="item in pageBlogs" :key="item._id">
         <div class="allPosts my-9">
-          <div class="date text-center text-slate-400 text-sm">
-            {{store.getBlogDate(new Date(item.date))}}
+          <div class="date text-center text-slate-400 text-sm" v-if="store.getBlogDate(item.date) != undefined">
+            {{store.getBlogDate(item.date)}}
           </div>
           <div class="title text-center text-xl my-4 capitalize">{{  item.title }}</div>
           <div
@@ -28,7 +28,7 @@
               srcset=""
             />
           </div>
-          <div class="description my-9 mx-6 text-slate-500 leading-9">
+          <div class="description my-9 mx-6 text-slate-500 leading-9 overflow-hidden">
             {{  item.description }}
           </div>
           <div class="readMore flex flex-row justify-center">
@@ -78,7 +78,7 @@
           <div
             class="date text-slate-400 text-sm tracking-wider uppercase mt-3"
           >
-            {{ store.getBlogDate(new Date(item.date)) }}
+            <!-- {{ store.getBlogDate(item.date) }} -->
           </div>
           <div class="Sidebartitle text-xl my-2">
             {{ item.title }}
@@ -285,5 +285,9 @@ export default {
 .sidebartitle {
   font-size: 1rem;
   font-weight: 600;
+}
+
+.description {
+  height: 70px;
 }
 </style>

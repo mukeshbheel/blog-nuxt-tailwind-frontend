@@ -6,7 +6,7 @@
             <img :src="item.image" alt="">
         </div>
         <div class="mx-2 sm:block hidden" >
-            <p class="date tag text-slate-500 text-sm my-3">{{ store.getBlogDate(new Date(item.date)) }}</p>
+            <!-- <p class="date tag text-slate-500 text-sm my-3">{{ store.getBlogDate(new Date(item.date)) }}</p> -->
             <h2 class="title">{{item.title}}</h2>
             <!-- <div class="tags my-3">
                 <p class="tag text-slate-500 text-sm" v-for="tag in item.tags" :key="tag">#{{tag}}</p>
