@@ -28,8 +28,8 @@
               srcset=""
             />
           </div>
-          <div class="description my-9 mx-6 text-slate-500 leading-9 overflow-hidden">
-            {{  item.description }}
+          <div class="description my-9 mx-6 text-slate-500 leading-9 overflow-hidden" v-html="item.description">
+          
           </div>
           <div class="readMore flex flex-row justify-center">
             <button class="bg-gray-800 text-white px-5 py-5" @click="$router.push(`/BlogDetails/${item._id}`)">Read More</button>

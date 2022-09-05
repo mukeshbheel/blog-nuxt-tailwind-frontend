@@ -1,12 +1,12 @@
 <template>
-    <div class="flex flex-row justify-center my-9 mx-7">
+    <div id="blogDetails" class="flex flex-row justify-center my-9 mx-7">
 
     <!-- .............................main posts.......................... -->
     <div class="main basis-3/4">
       <div class="flex flex-row justify-center" v-if="item">
         <div class="allPosts my-9">
           <div class="date text-center text-slate-400 text-sm">
-            {{store.getBlogDate(new Date(item[0].date))}}
+            {{store.getBlogDate(item[0].date)}}
           </div>
           <div class="title text-center text-xl my-4 capitalize">{{  item[0].title }}</div>
           <div
@@ -28,8 +28,8 @@
               srcset=""
             />
           </div>
-          <div class="description my-9 text-slate-500 leading-9">
-            {{  item[0].description }}
+          <div class="description my-9 text-slate-500 leading-9" v-html="item[0].description">
+            
           </div>
           
         </div>
@@ -67,3 +67,7 @@ export default{
     }
 }
 </script>
+
+<style scoped>
+
+</style>
