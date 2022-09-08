@@ -5,6 +5,9 @@
     <div class="main basis-3/4">
       <div class="flex flex-row justify-center" v-if="item">
         <div class="allPosts my-9">
+          <div class="mainImage justify-center my-9">
+            <img class="mx-auto" :src="item[0].image" alt="" srcset="" />
+          </div>
           <div class="date text-center text-slate-400 text-sm">
             {{store.getBlogDate(item[0].date)}}
           </div>
@@ -18,9 +21,7 @@
             ">
             <div class="tag mx-2 text-sm" v-for="tag in item[0].tags" :key="tag">#{{ tag }}</div>
           </div>
-          <div class="mainImage justify-center">
-            <img class="mx-auto" :src="item[0].image" alt="" srcset="" />
-          </div>
+          
           <div class="description my-9 text-slate-500 leading-9" v-html="item[0].description">
 
           </div>

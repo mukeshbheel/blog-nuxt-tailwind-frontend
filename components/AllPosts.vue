@@ -188,5 +188,8 @@ export default {
 
 .description {
   height: 70px;
+    width: 71%;
+    word-wrap: wrap;
+    margin-left: 8.5rem;
 }
 </style>
