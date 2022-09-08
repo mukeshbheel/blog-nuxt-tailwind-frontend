@@ -11,7 +11,7 @@ useHead({
   title: "blog",
   script: [
     {
-      src: "https://kit.fontawesome.com/1fde40d79a.js",
+      src: "https://kit.fontawesome.com/116a9bd05a.js",
       crossorigin: "anonymous",
       async: "true",
     },
