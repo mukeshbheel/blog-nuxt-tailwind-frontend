@@ -50,6 +50,7 @@ export default {
 
     return {
       store,
+      footerPostsData,
     }
   },
   mounted() {
