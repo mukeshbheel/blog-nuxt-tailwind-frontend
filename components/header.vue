@@ -11,7 +11,7 @@
         <li class="basis-1/6"><a href="https://twitter.com/" target="_blank"><img class="w-5"
               src="../assets/icons/twitter.png" alt="" srcset=""></a></li>
         <li class="basis-1/6 text-xs">
-          <nuxt-link href="/AdminPanel/Dashboard">Admin Panel</nuxt-link>
+          <!-- <nuxt-link href="/AdminPanel/Dashboard">Admin Panel</nuxt-link> -->
         </li>
       </ul>
       <div class="search basis-1/4">
