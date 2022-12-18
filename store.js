@@ -1,6 +1,6 @@
 import axios from "axios";
 var currentBlog = 'null';
-const baseUrl = 'https://sheltered-hamlet-11059.herokuapp.com'
+const baseUrl = 'https://tranquil-basbousa-ea4da1.netlify.app/'
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 function getBlogDate(blogDate) {
